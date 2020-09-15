@@ -20,7 +20,7 @@ VOLUME /home/gradle/.gradle
 WORKDIR /home/gradle
 
 RUN apt-get update \
-    && apt-get upgrade \
+    && apt-get -y upgrade \
     && apt-get install --yes --no-install-recommends \
         fontconfig \
         unzip \

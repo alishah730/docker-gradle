@@ -1,5 +1,5 @@
-#FROM adoptopenjdk:8-jdk-hotspot
-FROM ubuntu:latest
+FROM adoptopenjdk:latest
+#FROM ubuntu:latest
 
 CMD ["gradle"]
 

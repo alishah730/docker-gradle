@@ -54,7 +54,7 @@ RUN set -o errexit -o nounset \
     && gradle --version \
     && echo "Testing Git" \
     && git version
-
+HEALTHCHECK NONE
 ENV http_proxy ""
 ENV https_proxy ""
 ENV HTTP_PROXY ""

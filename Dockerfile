@@ -32,6 +32,8 @@ RUN apt-get update \
         mercurial \
         openssh-client \
         subversion \
+        apt-utils \
+        vim \
         bash \
     && rm -rf /var/lib/apt/lists/*
 

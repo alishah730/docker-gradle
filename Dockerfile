@@ -1,4 +1,5 @@
-FROM adoptopenjdk:8-jdk-hotspot
+#FROM adoptopenjdk:8-jdk-hotspot
+FROM ubuntu:latest
 
 CMD ["gradle"]
 
@@ -23,7 +24,7 @@ RUN apt-get update \
         fontconfig \
         unzip \
         wget \
-        \
+        openjdk-8-jdk\
         bzr \
         git \
         git-lfs \

@@ -35,6 +35,7 @@ RUN apt-get update \
         apt-utils \
         vim \
         bash \
+        maven \
     && rm -rf /var/lib/apt/lists/* \
     && apt update \
     && apt upgrade \
@@ -58,7 +59,9 @@ RUN set -o errexit -o nounset \
     && echo "Testing Gradle installation" \
     && gradle --version \
     && echo "Testing Git" \
-    && git version
+    && git version \
+    && echo "Testing Maven" \
+    && mvn -v
 HEALTHCHECK NONE
 ENV http_proxy ""
 ENV https_proxy ""

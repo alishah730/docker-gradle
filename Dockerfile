@@ -1,4 +1,4 @@
-FROM adoptopenjdk:8u262-b10-jdk-hotspot
+FROM adoptopenjdk:8u292-b10-jdk-hotspot
 #FROM ubuntu:latest
 
 CMD ["gradle"]

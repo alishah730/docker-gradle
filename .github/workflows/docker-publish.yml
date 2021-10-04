@@ -53,7 +53,7 @@ jobs:
         fail-build: true
         acs-report-enable: true
         include-app-packages: true
-        #acs-report-severity-cutoff: "Medium"
+        acs-report-severity-cutoff: "Medium"
     - name: anchore inline scan JSON results
       run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
     - name: anchore action SARIF report
@@ -75,11 +75,11 @@ jobs:
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-      - name: Log into GitHub Container Registry
+      - name: Log into Jfrog Container Registry
       # TODO: Create a PAT with `read:packages` and `write:packages` scopes and save it as an Actions secret `CR_PAT`
         run: echo "${{ secrets.JFROG_PAT }}" | docker login alixray.jfrog.io -u alishah730@gmail.com --password-stdin
 
-      - name: Push image to GitHub Container Registry
+      - name: Push image to Jfrog Container Registry
         run: |
           IMAGE_ID=alixray.jfrog.io/docker/$IMAGE_NAME
 
